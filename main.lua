@@ -13,9 +13,13 @@ local Game = require("src.instances.game")
 Concord.addInstance(Game)
 
 local spriteRenderer = S.spriteRenderer()
+local physics = S.physics(0.8, 10)
 
 Game:addSystem(spriteRenderer, "update")
+Game:addSystem(physics, "update")
+
 Game:addSystem(spriteRenderer, "draw")
+Game:addSystem(physics, "draw", "drawDebug")
 
 local testEntity = Concord.entity()
 :give(C.transform, Vector(500, 100))
@@ -31,8 +35,9 @@ local testEntity = Concord.entity()
       rest = "idle",
    }
 })
+:give(C.body, Vector(-30, 200))
 
-Game:addEntity(testEntity)
+--Game:addEntity(testEntity)
 
 local testEntity2 = Concord.entity()
 :give(C.transform, Vector(300, 100))
@@ -48,6 +53,7 @@ local testEntity2 = Concord.entity()
       rest = "idle",
    }
 })
+:give(C.body, Vector(300, 0), nil, nil, 0)
 
 Game:addEntity(testEntity2)
 
