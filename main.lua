@@ -1,6 +1,6 @@
 love.graphics.setDefaultFilter("nearest", "nearest")
 
-local Fluid = require("lib.fluid").init({
+local Concord = require("lib.concord").init({
    useEvents = true
 })
 local Vector = require("lib.vector")
@@ -10,14 +10,14 @@ local S = require("src.systems")
 local O = require("src.objects")
 
 local Game = require("src.instances.game")
-Fluid.addInstance(Game)
+Concord.addInstance(Game)
 
 local spriteRenderer = S.spriteRenderer()
 
 Game:addSystem(spriteRenderer, "update")
 Game:addSystem(spriteRenderer, "draw")
 
-local testEntity = Fluid.entity()
+local testEntity = Concord.entity()
 :give(C.transform, Vector(500, 100))
 :give(C.sprite, {
    idle      = O.texture("assets/entities/enemies/bat/idle.png", 2, 0.1, true),
@@ -34,7 +34,7 @@ local testEntity = Fluid.entity()
 
 Game:addEntity(testEntity)
 
-local testEntity2 = Fluid.entity()
+local testEntity2 = Concord.entity()
 :give(C.transform, Vector(300, 100))
 :give(C.sprite, {
    idle    = O.texture("assets/entities/enemies/slime/idle.png", 1),

@@ -1,5 +1,5 @@
-local Fluid = require("lib.fluid")
+local Concord = require("lib.concord")
 
-local Game = Fluid.instance()
+local Game = Concord.instance()
 
 return Game

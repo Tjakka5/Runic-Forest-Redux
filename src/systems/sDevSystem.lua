@@ -1,8 +1,8 @@
-local Fluid = require("lib.fluid")
+local Concord = require("lib.concord")
 
 local C = require("src.components")
 
-local DevSystem = Fluid.system({C.debug})
+local DevSystem = Concord.system({C.debug})
 
 function DevSystem:init(e, e2)
    self.e = e

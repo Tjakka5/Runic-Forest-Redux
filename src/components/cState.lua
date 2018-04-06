@@ -1,6 +1,6 @@
-local Fluid = require("lib.fluid")
+local Concord = require("lib.concord")
 
-local State = Fluid.component(function(e, initialState, states)
+local State = Concord.component(function(e, initialState, states)
    e.current = initialState or "default"
    e.states  = states       or {}
 end, true)

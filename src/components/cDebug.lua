@@ -1,6 +1,6 @@
-local Fluid = require("lib.fluid")
+local Concord = require("lib.concord")
 
-local Debug = Fluid.component(function(e, ...)
+local Debug = Concord.component(function(e, ...)
    e.args = {...}
 end)
 

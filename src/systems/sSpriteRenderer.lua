@@ -1,8 +1,8 @@
-local Fluid = require("lib.fluid")
+local Concord = require("lib.concord")
 
 local C = require("src.components")
 
-local SpriteRenderer = Fluid.system({C.transform, C.sprite})
+local SpriteRenderer = Concord.system({C.transform, C.sprite})
 
 local function getState(e)
    local sprite = e:get(C.sprite)
