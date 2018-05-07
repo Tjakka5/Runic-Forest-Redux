@@ -38,8 +38,8 @@ function Physics:drawDebug()
       local transform = e:get(C.transform)
       local body      = e:get(C.body)
 
-      local x1, y1 = transform.position:unpack()
-      local x2, y2 = (transform.position + body.velocity / 5):unpack()
+      local x1, y1 = transform.position:split()
+      local x2, y2 = (transform.position + body.velocity / 5):split()
 
       love.graphics.line(x1, y1, x2, y2)
    end
